@@ -1,0 +1,15 @@
+name: ex3 - scheduled job
+
+on:
+  schedule:
+    - cron: "0 */6 * * 1-5"
+  workflow_dispatch: # MANUAL TRIGGER
+
+jobs:
+  display-current-date:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print date
+        run: |
+          echo "Current date"
+          echo $(date +'%Y-%m-%dT%H-%M-%S')
