@@ -14,3 +14,12 @@ jobs:
         run: |
           echo "Current date"
           echo $(date +'%Y-%m-%dT%H-%M-%S')
+
+
+# Prepare a new configuration that:
+
+# will have the option to run using the scheduler (trigger schedule) - the job should run every 6 hours, from Monday to Friday
+# will have the option to only run manually (trigger manual)
+# will contain one job called display-current-date
+# job display-current-date will contain one step with information about the current time
+# give correct names for: workflow and step

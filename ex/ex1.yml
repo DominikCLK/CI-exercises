@@ -12,3 +12,10 @@ jobs:
         run: |
           echo "Running job on:"
           echo ${{ runner.os }}
+
+# Prepare a new configuration that:
+
+# 1 will have the option to only run manually (trigger manual)
+# 2 will contain one job called display-env-info
+# 3 job display-env-info will contain one step with writing information about the system on which we perform our task
+# 4 give correct names for: workflow and step

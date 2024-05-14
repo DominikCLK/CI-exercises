@@ -19,7 +19,6 @@ jobs:
 
 # Prepare a new configuration that:
 
-# will have the option to only run manually (trigger manual)
-# will contain one job called create-file
-# job create-file will contain a step to create a current_date.txt file that will contain the current time
-# give correct names for: workflow and step
+# Based on the ex3 artifact task:
+
+# Modify the name: current_date_artifact field to also include the current date information.
