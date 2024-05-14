@@ -1,15 +1,17 @@
-name: ex3 - scheduled job
+name: ex3 - Simple txt artifact
 
 on:
-  schedule:
-    - cron: "0 */6 * * 1-5"
   workflow_dispatch: # MANUAL TRIGGER
 
 jobs:
-  display-current-date:
+  create-file:
     runs-on: ubuntu-latest
     steps:
-      - name: Print date
-        run: |
-          echo "Current date"
-          echo $(date +'%Y-%m-%dT%H-%M-%S')
+      - name: Create current_date.txt
+        run: echo $(date) > current_date.txt
+        
+      - name: Archive File as Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: current_date_artifact
+          path: current_date.txt
