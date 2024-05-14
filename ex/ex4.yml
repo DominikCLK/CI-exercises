@@ -1,21 +1,20 @@
-name: ex3 - Simple txt artifact
-
+name: ex4 - Simple txt artifact
 on:
   workflow_dispatch: # MANUAL TRIGGER
-
+   
 jobs:
   create-file:
     runs-on: ubuntu-latest
     steps:
-      - name: Create current_date.txt
+      - name: Create a file
         run: echo $(date) > current_date.txt
-        
+      - name: Store date as variable
+        run: echo "DATE=$(date +'%Y-%m-%dT%H-%M-%S')" >> $GITHUB_ENV
       - name: Archive File as Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: current_date_artifact
+          name: current_date_artifact_${{ env.DATE }}
           path: current_date.txt
-
 
 # Prepare a new configuration that:
 
