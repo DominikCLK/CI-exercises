@@ -1,10 +1,14 @@
 name: ex1 - manual job
+
 on:
   workflow_dispatch: # MANUAL TRIGGER
 
 jobs:
-  prepare-env:
-    timeout-minutes: 5
+  display-env-info:
     runs-on: ubuntu-latest
-    - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+    name: Display Environment Information
+    steps:
+      - name: Display System Info
+        run: |
+          echo "Running job on:"
+          echo ${{ runner.os }}
