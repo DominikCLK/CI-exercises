@@ -1,0 +1,10 @@
+name: ex1 - manual job
+on:
+  workflow_dispatch: # MANUAL TRIGGER
+
+jobs:
+  prepare-env:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
